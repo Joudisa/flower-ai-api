@@ -5,7 +5,7 @@ const express = require('express');
 const cors = require('cors');
 
 const app = express();
-app.use(cors());  
+
 const port = process.env.PORT || 10000;
 
 app.use(express.json());
@@ -16,7 +16,7 @@ app.post('/api/v1/predictions', (req, res) => {
   console.log('Prompt erhalten:', prompt);
 
   // Hier würde dein KI-Code stehen – als Platzhalter:
-  res.json({ imageUrl: 'https://example.com/fake-image.png', prompt });
+  res.json({ output: ['https://example.com/fake-image.png'], prompt });
 });
 
 app.listen(port, () => {
